@@ -15,5 +15,6 @@ namespace Reimbursment_App.Data
         }
 
         public DbSet<Ticket> tickets { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

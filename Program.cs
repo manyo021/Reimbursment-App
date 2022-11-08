@@ -1,6 +1,7 @@
 global using Reimbursment_App.Models;
 using Microsoft.EntityFrameworkCore;
 using Reimbursment_App.Data;
+using Reimbursment_App.Services.AuthenticationService;
 using Reimbursment_App.Services.TicketService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 //Allows for injection, lets api know where we are injecting from
 builder.Services.AddScoped<ITicketService, TicketService>();
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 
 var app = builder.Build();
 
