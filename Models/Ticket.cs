@@ -8,6 +8,12 @@ namespace Reimbursment_App.Models
 {
     public class Ticket
     {
+
+        public Ticket()
+        {
+            Date = DateTime.Now;
+        }
+
         public int Id { get; set; }
 
 
@@ -21,5 +27,9 @@ namespace Reimbursment_App.Models
         public string Status { get; set; } = "Pending";
 
         public User? User { get; set; }
+
+        public DateTime Date { get; private set; }
+
+
     }
 }
